@@ -11,7 +11,7 @@ import './App.css'
 
 class App extends Component {
   state = {
-    books:[]
+    books: []
   }
 
 componentDidMount() {
@@ -41,6 +41,8 @@ onChangeShelf = (book, newShelf) => {
 render() {
   return (
   <div className='app'>
+   <Route exact path='/' render={() => (
+  <div className='list-book'>
    <Header/> 
    <div className='list-book-content'>
    
@@ -67,23 +69,18 @@ render() {
 <Link to="/search"> Add Book </Link>
 </div>
 </div>
-)}}
+)}
+/>
 
-<div>
-<Route path='/search' render={({history})=>(
+<Route path='/search' render={({ history }) => (
   <SearchBooks
   	books={this.state.books}
   	changeShelf={this.onChangeShelf}
   />
- 
   )}
-  />
- </div>
-
-
- 
-  
-
-
-
-export default App
+/>
+</div>
+		)
+	}
+}
+export default App;
