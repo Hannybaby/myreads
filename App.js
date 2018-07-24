@@ -41,6 +41,7 @@ onChangeShelf = (book, newShelf) => {
 render() {
   return (
   <div className='app'>
+   <SearchBooks />
    <Route exact path='/' render={() => (
   <div className='list-book'>
    <Header/> 
